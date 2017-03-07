@@ -1,7 +1,7 @@
-var http = require('http');
-var path = require('path');
+var http = require('http'); // importamos el módulo http 
+var path = require('path'); // el módulo path proporciona utilidades para trabajar con rutas de archivos y directorios 
 
-var paginas = [
+var pagina = [
 	{ruta: '', output: 'Bienvenida'},
 	{ruta: 'about', output: 'Información sobre nosotros'},
 	{ruta: 'productos', output: 'Info de productos'}

@@ -1,8 +1,8 @@
 var http = require('http');
 var path = require('path');
-var fs = require('fs');
+var fs = require('fs'); // el módulo fs que se encagar de comunicarse con el gestor de archivos del ordenador
 
-var paginas = {
+var mineTypes = {
 	'.js' : 'text/javascript',
 	'.html' : 'text/html',
 	'.cs' : 'text/css'
@@ -16,7 +16,8 @@ var paginas = {
 		fs.exists(f,function(exists) {
 			if (exists){
 				fs.readFile(f,function (err, data){
-					if (err) {response.writeHead(500);
+					if (err) {response.writeHead(500);   //encabezado de la respuesta, mandamos información, tipo de contenido 
+					//que estamos mandado código(status code) 500: hubo algún problema
 						response.end('Error del Servidor');
 						return;}
 					var headers = {'content-type': mineTypes[path.extname(buscar)]};
