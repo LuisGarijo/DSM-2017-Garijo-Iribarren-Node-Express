@@ -20,7 +20,7 @@ var mineTypes = {
 					//que estamos mandado código(status code) 500: hubo algún problema
 						response.end('Error del Servidor');
 						return;}
-					var headers = {'content-type': mineTypes[path.extname(buscar)]};
+					var headers = {'Content-type': mineTypes[path.extname(buscar)]};
 					response.writeHead(200, headers);
 					response.end(data);
 				});

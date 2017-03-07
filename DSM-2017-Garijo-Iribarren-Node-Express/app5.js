@@ -11,11 +11,11 @@ var paginas = [
 			function (request, response){
 
 				var id = url.parse(decodeURI(request.url), true).query.id;
-				console.log(ruta);
+				console.log(id);
 				if(id){
 					paginas.forEach(function(pagina) {
 						if(pagina.id === id){
-							response.writeHead(200, {'content-type':'text/html'});
+							response.writeHead(200, {'Content-type':'text/html'});
 							response.end(pagina.output);
 						}
 					});

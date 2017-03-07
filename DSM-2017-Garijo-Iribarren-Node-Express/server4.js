@@ -2,14 +2,14 @@ var http = require('http');
 var path = require('path');
 
 var paginas = [
-	{ruta: '/', output: 'Bienvenida'},
-	{ruta: '/about', output: 'Información sobre nosotros'},
-	{ruta: '/productos', output: 'Info de productos'},
-	{ruta: '/productos/producto-uno', output: 'Info de producto uno'},
-	{ruta: '/productos/producto-dos', output: 'Info de producto dos'}
+	{ruta: '', output: 'Bienvenida'},
+	{ruta: 'about', output: 'Información sobre nosotros'},
+	{ruta: 'productos', output: 'Info de productos'},
+	{ruta: 'productos/producto-uno', output: 'Info de producto uno'},
+	{ruta: 'productos/producto-dos', output: 'Info de producto dos'}
 ];
 
-function start(){
+function start(){ 
 		http.createServer(
 			function (request, response){
 
@@ -17,6 +17,7 @@ function start(){
 				console.log(ruta);
 				paginas.forEach(function(pagina) {
 					if(ruta == pagina.ruta){
+						console.log('Entro al if');
 						response.writeHead(200, {'content-type':'text/html'});
 						response.end(pagina.output);
 					}
